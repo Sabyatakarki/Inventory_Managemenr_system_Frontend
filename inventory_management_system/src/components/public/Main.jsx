@@ -20,7 +20,7 @@ const Main = () => {
           <li><a href="#home">Home</a></li>
           <li><a href="#features">Features</a></li>
           <li><a href="#support">Support</a></li>
-          <li><a href="#products">Products</a></li>
+          <li><a href="#More">More</a></li>
           <li><button className="login-btn" onClick={handleLoginClick}>Log In</button></li>
         </ul>
       </nav>
@@ -42,6 +42,39 @@ const Main = () => {
           <img src={ss} alt="Inventory" className="inventory-img" />
         </div>
       </section>
+
+      <section id="home" className = "Feature-section">
+      <div className="features-container">
+      <div className="feature-box">
+        <h3>Product Tracking</h3>
+        <p>
+          This feature allows users to track the availability of products in real time.
+          Users can see how many items are in stock and get updates when inventory is low.
+          It helps businesses know what items are selling quickly and ensures they restock
+          in time to meet customer demands.
+        </p>
+      </div>
+
+      <div className="feature-box">
+        <h3>Why is it useful?</h3>
+        <p>
+          A search bar with filtering options helps users quickly find specific items in
+          the inventory, such as by name, category, or availability. It saves time by
+          allowing users to find products without scrolling through long lists.
+        </p>
+      </div>
+
+      <div className="feature-box">
+        <h3>Easy to Update</h3>
+        <p>
+          Admins can add new products, update existing product details, or remove items
+          that are no longer available from the inventory. It gives complete control over
+          the inventory and keeps the database up-to-date.
+        </p>
+      </div>
+    </div>
+      </section>
+      
 
       {/* Features Section */}
       <section id="features" className="features-section">
@@ -85,7 +118,7 @@ const Main = () => {
       </section>
 
       {/* Words from Developers Section */}
-      <section className="developers-section">
+      <section id="More" className="developers-section">
         <h2>Words from Developers</h2>
         <div className="developer-box">
           <ul>
