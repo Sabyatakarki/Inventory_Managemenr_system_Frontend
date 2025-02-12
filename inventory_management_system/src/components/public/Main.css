@@ -1,0 +1,278 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Space between logo, links, and login button */
+  align-items: center;
+  background-color: #800000;
+  padding: 15px 30px;
+  color: rgb(249, 247, 247);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Logo on the left */
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Centered nav links */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+  color: beige;
+}
+
+/* Login button on the right */
+.login-btn {
+  padding: 10px 20px;
+  background-color: beige;
+  color: #000000;
+  font-weight: bold;
+  font-size: medium;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Home Section */
+.home-section {
+  text-align: center;
+  padding: 120px 20px 60px;
+  margin-top: 2300px; /* Adjusted to prevent overlap with navbar */
+}
+
+.home-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: left;
+}
+
+.text-content {
+  max-width: 50%;
+}
+
+.inventory-img {
+  max-width: 40%;
+  height: auto;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+/* Features Section */
+.features-section {
+  padding: 50px 10%;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.features-title {
+  font-size: 30px;
+  color: #800000;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+/* Feature Box */
+.feature {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  text-align: left;
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 30px;
+  gap: 30px;
+}
+
+.feature:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.feature-img {
+  width: 45%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.feature-text {
+  width: 50%;
+}
+
+.feature-text h3 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.feature-text p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.contact-container {
+  text-align: center;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+}
+
+.contact-heading {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.contact-subheading {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.contact-box {
+  background-color: #f9f7dc;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 16px;
+}
+
+.contact-email {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.contact-email a {
+  text-decoration: none;
+  color: black;
+}
+
+.contact-email a:hover {
+  text-decoration: underline;
+}
+
+.contact-number {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+/* Words from Developers Section */
+.developers-section {
+  background-color: #800000;
+  padding: 50px 10%;
+  text-align: center;
+  color: white;
+  margin-top: 5px;
+  
+}
+
+.developer-box {
+  background-color: #f8f6e3;
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+  text-align: left;
+  color: black;
+}
+
+.developer-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.developer-box li {
+  margin-bottom: 10px;
+}
+
+.developer-name {
+  font-weight: bold;
+  color: #800000;
+  text-align: right;
+}
+
+/* Footer Section */
+.footer {
+  text-align: center;
+  padding: 40px 10%;
+  background-color: white;
+  color: black;
+}
+
+.footer-logo {
+  width: 80px;
+  height: auto;
+}
+
+.footer-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+    
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .feature {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .feature:nth-child(even) {
+    flex-direction: column;
+  }
+
+  .feature-img, .feature-text {
+    width: 100%;
+  }
+
+  .developer-box {
+    width: 90%;
+  }
+}

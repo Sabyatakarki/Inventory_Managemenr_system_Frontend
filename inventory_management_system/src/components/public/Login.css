@@ -1,0 +1,113 @@
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(254, 249, 249);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    width: 150%;
+    height: 100%;
+    max-width: 1000px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-section {
+    flex: 2;
+    position: relative;
+    display: flex;
+    justify-content: center; /* Center the image */
+    align-items: center; /* Vertically center the image */
+}
+
+.image-section img {
+    width: 90%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the container area */
+}
+
+.outer-card {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(253, 201, 104);
+    padding: 6px;
+}
+
+.inner-card {
+    width: 80%;
+    max-width: 400px;
+    background-color:white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(159, 70, 70, 0.1);
+    text-align: center;
+}
+
+.inner-card h2 {
+    color: #b84b4b;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.inner-card p {
+    color: #2d2828;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.inner-card label {
+    display: block;
+    color: #9f2e2e;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.inner-card input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 3px solid #8f1616;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+.inner-card input:focus {
+    border-color: #572929;
+    box-shadow: 0 0 5px rgba(187, 167, 167, 0.5);
+}
+
+.inner-card .note {
+    font-size: 12px;
+    color: rgb(34, 31, 31);
+    font-style: normal;
+    margin-bottom: 20px;
+}
+
+.inner-card .login-button {
+    background-color: #782614;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.inner-card .login-button:hover {
+    background-color: rgb(155, 76, 72);
+}
