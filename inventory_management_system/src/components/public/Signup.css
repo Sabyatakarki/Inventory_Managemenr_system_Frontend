@@ -3,7 +3,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: url('signup2.png') no-repeat center center/cover; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,8 +19,8 @@ body {
 
 .card {
     background: rgba(255, 255, 255, 0.9); /* Transparent background to show the image */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(88, 11, 11, 0.1);
+    border-radius: 16px;
     width: 360px;
     padding: 30px 20px;
     text-align: center;
@@ -29,15 +28,14 @@ body {
 
 /* Icon Section */
 .icon img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
+    width: 70px;
+    height: px;
 }
 
 /* Heading Section */
 h2 {
     font-size: 25px;
-    color: #ea4646;
+    color: #bd2e2e;
     margin-bottom: 10px;
 }
 
@@ -57,7 +55,7 @@ p {
     width: 90%;
     padding: 12px 15px;
     font-size: 14px;
-    border: 2px solid #ea1a1a;
+    border: 3px solid #8f2424;
     border-radius: 10px;
     outline: none;
 }
@@ -72,16 +70,14 @@ p {
     font-size: 16px;
 }
 
-
-
-
 /* Buttons */
 .btn {
     width: 50%;
     padding: 13px;
-    background-color: #ee4138;
+    background-color: #7d2723;
     color: white;
     border: none;
+    font-weight: bold;
     border-radius: 6px;
     font-size: 16px;
     cursor: pointer;

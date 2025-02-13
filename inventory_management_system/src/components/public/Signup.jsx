@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import icon from "../../assets/icon.png"; // Import the icon image
+import "./Signup.css"
+import webicons from "../../assets/webicons.png"; // Import the icon image
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -32,7 +33,7 @@ const Signup = () => {
       <div className="card">
         {/* Icon Section */}
         <div className="icon">
-          <img src={icon} alt="Icon" />
+          <img src={webicons} alt="Icon" />
         </div>
 
         {/* Heading Section */}
