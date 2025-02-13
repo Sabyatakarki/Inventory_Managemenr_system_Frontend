@@ -21,7 +21,7 @@ body {
 }
 
 .image-section {
-    flex: 2;
+    flex: 3;
     position: relative;
     display: flex;
     justify-content: center; /* Center the image */
@@ -39,15 +39,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:rgb(253, 201, 104);
+    background-color:rgb(147, 67, 49);
     padding: 6px;
 }
 
 .inner-card {
-    width: 80%;
+    width: 90%;
     max-width: 400px;
-    background-color:white;
-    padding: 50px;
+    background-color:rgb(253, 245, 245);
+    padding: 80px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(159, 70, 70, 0.1);
     text-align: center;

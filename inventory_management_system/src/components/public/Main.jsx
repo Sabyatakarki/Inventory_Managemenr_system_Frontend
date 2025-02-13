@@ -8,7 +8,11 @@ import webicons from "../../assets/webicons.png"; // Replace with your actual ca
 
 const Main = () => {
   const handleLoginClick = () => {
-    window.location.href = "/login"; 
+    window.location.href = "/login";
+  }
+    const handleSignupClick = () => {
+      window.location.href = "/Signup";
+
   };
 
   return (
@@ -35,7 +39,7 @@ const Main = () => {
               management, order fulfillment, and inventory control system.
             </p>
             <div className="buttons">
-              <button className="signup-btn">SIGNUP NOW</button>
+              <button className="signup-btn" onClick={handleSignupClick}>SIGNUP NOW</button>
               <button className="explore-btn">ONLY EXPLORE</button>
             </div>
           </div>

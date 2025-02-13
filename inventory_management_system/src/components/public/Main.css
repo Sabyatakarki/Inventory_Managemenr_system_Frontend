@@ -12,10 +12,10 @@ body {
   justify-content: space-between; /* Space between logo, links, and login button */
   align-items: center;
   background-color: #800000;
-  padding: 15px 30px;
+  padding: 0px 19px;
   color: rgb(249, 247, 247);
   position: fixed;
-  width: 100%;
+  width: 98%;
   top: 0;
   left: 0;
   z-index: 1000;
@@ -31,6 +31,7 @@ body {
 .nav-links {
   display: flex;
   gap: 30px;
+  align-items: center;
   list-style: none;
 }
 
@@ -60,6 +61,49 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
+.buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.signup-btn, .explore-btn {
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.signup-btn {
+  background: #800000;
+  color: white;
+  border: none;
+}
+
+.signup-btn:hover {
+  background: #a00000;
+  transform: scale(1.05);
+}
+
+.explore-btn {
+  background: beige;
+  color: #800000;
+  border: 2px solid #800000;
+}
+
+.explore-btn:hover {
+  background: #f5e6cc;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .buttons {
+    flex-direction: column;
+  }
+}
+
 
 /* Home Section */
 .home-section {
