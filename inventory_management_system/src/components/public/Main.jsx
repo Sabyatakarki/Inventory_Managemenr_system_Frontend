@@ -36,7 +36,7 @@ const Main = () => {
             <h1>Grocery Inventory Management</h1>
             <p>
               Increase your sales and keep track of every unit with our powerful stock
-              management, order fulfillment, and inventory control system.
+              management, order fulfillment, and inventory control system.A reliable inventory platform to help you grow you business.
             </p>
             <div className="buttons">
               <button className="signup-btn" onClick={handleSignupClick}>SIGNUP NOW</button>
