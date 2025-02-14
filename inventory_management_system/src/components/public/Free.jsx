@@ -1,6 +1,7 @@
 import React from 'react';
+import "./Free.css"
 import { Link } from 'react-router-dom';
-import Lock from '../assets/Lock.png'; // Import the Lock icon
+import Lock from "../../assets/Lock.png";
 
 const Free = () => {
   return (

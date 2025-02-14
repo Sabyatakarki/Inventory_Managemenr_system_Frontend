@@ -3,7 +3,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: url('error.png') no-repeat center center/cover; 
     display: flex;
     justify-content: center;
     align-items: center;

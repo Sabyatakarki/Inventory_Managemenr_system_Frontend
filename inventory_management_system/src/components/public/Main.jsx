@@ -12,7 +12,9 @@ const Main = () => {
   }
     const handleSignupClick = () => {
       window.location.href = "/Signup";
-
+  }
+  const handleFreeClick=()=>{
+    window.location.href ="/Free";
   };
 
   return (
@@ -40,14 +42,14 @@ const Main = () => {
             </p>
             <div className="buttons">
               <button className="signup-btn" onClick={handleSignupClick}>SIGNUP NOW</button>
-              <button className="explore-btn">ONLY EXPLORE</button>
+              <button className="explore-btn"onClick={handleFreeClick}>ONLY EXPLORE</button>
             </div>
           </div>
           <img src={ss} alt="Inventory" className="inventory-img" />
         </div>
       </section>
 
-      <section id="home" className = "Feature-section">
+      <section id="home" className = "Feature-home">
       <div className="features-container">
       <div className="feature-box">
         <h3>Product Tracking</h3>
@@ -152,6 +154,7 @@ const Main = () => {
         <img src={webicons} alt="Cart Logo" className="footer-logo" />
         <h2 className="footer-title">HamroInventory</h2>
         <p>Experience the first Nepali Inventory Management System with its amazing features.</p>
+        <p>.Make sure to follow us on Instagram ,Twitter,Threads</p>
         <p>© 2025, HamroInventory Pvt. Ltd. All Rights Reserved.</p>
       </footer>
     </>
