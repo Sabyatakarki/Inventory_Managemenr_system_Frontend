@@ -11,13 +11,17 @@ body {
 }
 
 .signup-container {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
     display: flex;
-    justify-content:center;
     align-items: center;
+    justify-content: center;
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.9); /* Transparent background to show the image */
+    background: rgba(255, 255, 255, 0.9); 
     box-shadow: 0 8px 16px rgba(88, 11, 11, 0.1);
     border-radius: 16px;
     width: 380px;

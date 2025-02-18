@@ -1,0 +1,181 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; 
+}
+
+/* Container */
+.Container {
+    display: flex;
+    width: 100vw; 
+    height: 100vh; 
+    overflow: hidden;
+}
+.recent-purchase {
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.recent-purchase h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #800000;
+    margin-bottom: 15px;
+}
+
+.recent-purchase p {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.red {
+    color: red;
+    font-weight: bold;
+}
+
+.green {
+    color: green;
+    font-weight: bold;
+}
+
+.purchase-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.purchase-details span {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    padding: 5px 15px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    height: 100%; /* Full height of the container */
+    background-color: #800000; /* Dark red */
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Sidebar Buttons */
+.sidebar-btn {
+    background-color:#800000;
+    border: none;
+    color: white;
+    padding: 16px;
+    width: 80%;
+    text-align: left;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.sidebar-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Active Sidebar Button */
+.sidebar-btn.active {
+    background-color: white;
+    color: #b82e2e;
+    font-weight: bold;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1; /* Takes the remaining space */
+    background-color: #fff; /* White background */
+    padding: 40px;
+    overflow-y: auto;
+}
+
+/* Products Section */
+.products {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.product {
+    text-align: center;
+}
+
+.product img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #f71b1b;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+.search-box input {
+    padding: 5px;
+    border: 1px solid gray;
+  }
+
+.search-box button {
+    margin-left: 5px;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  }
+  .recent-purchase h2{
+    font-weight: bold;
+    size: 10px;
+    text-align: center;
+    color: #800000;
+  }
+
+  .recent-purchase {
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+  
+  .recent-purchase .red {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .recent-purchase .green {
+    color: green;
+    font-weight: bold;
+  }
