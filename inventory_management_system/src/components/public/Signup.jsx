@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./Signup.css";
 import webicons from "../../assets/webicons.png"; 
-import signup2 from "../../assets/signup2.png"; // ✅ Import the image
 
 const Signup = () => {
   const [formData, setFormData] = useState({

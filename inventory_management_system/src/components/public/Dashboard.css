@@ -1,181 +1,198 @@
-/* General Reset */
-body {
-    margin: 0;
-    padding: 0;
-    height: 100vh; 
-}
-
-/* Container */
+/* Full Screen Layout */
 .Container {
-    display: flex;
-    width: 100vw; 
-    height: 100vh; 
-    overflow: hidden;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: #fff;
 }
-.recent-purchase {
-    background-color: #f8f8f8;
-    padding: 20px;
-    margin: 20px auto;
-    border-radius: 10px;
-    max-width: 600px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.recent-purchase h2 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #800000;
-    margin-bottom: 15px;
-}
-
-.recent-purchase p {
-    font-size: 18px;
-    font-weight: 500;
-    margin: 10px 0;
-}
-
-.red {
-    color: red;
-    font-weight: bold;
-}
-
-.green {
-    color: green;
-    font-weight: bold;
-}
-
-.purchase-details {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.purchase-details span {
-    display: flex;
-    justify-content: space-between;
-    font-size: 16px;
-    padding: 5px 15px;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
 
 /* Sidebar */
 .sidebar {
-    width: 200px;
-    height: 100%; /* Full height of the container */
-    background-color: #800000; /* Dark red */
-    color: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
+  width: 250px;
+  background-color: #800000;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
 }
 
 .sidebar h2 {
-    margin-bottom: 20px;
-    text-align: center;
+  margin-bottom: 20px;
 }
 
-/* Sidebar Buttons */
 .sidebar-btn {
-    background-color:#800000;
-    border: none;
-    color: white;
-    padding: 16px;
-    width: 80%;
-    text-align: left;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background 0.3s;
+  width: 80%;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.3s;
 }
 
-.sidebar-btn:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Active Sidebar Button */
 .sidebar-btn.active {
-    background-color: white;
-    color: #b82e2e;
-    font-weight: bold;
+  background-color: #d1cfcf;
+  color: black;
 }
 
 /* Main Content */
 .main-content {
-    flex-grow: 1; /* Takes the remaining space */
-    background-color: #fff; /* White background */
-    padding: 40px;
-    overflow-y: auto;
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
 }
 
-/* Products Section */
-.products {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+/* Dashboard Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  position: relative;
 }
 
-.product {
-    text-align: center;
+/* Search Section */
+.search-section {
+  position: relative;
 }
 
-.product img {
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
+.search-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #800000;
+  margin-left: 5px;
+}
+
+/* Search Dropdown Panel */
+.search-panel {
+  position: absolute;
+  top: 90px;
+  right: 0;
+  width: 200px;
+  background: white;
+  border: 1px solid #af3e3e;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.search-suggestion {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.search-suggestion:hover {
+  background-color: #f5f5dc;
+}
+
+/* Navigation Tabs */
+.dashboard-nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f5f5dc;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.nav-btn {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.nav-btn.active {
+  font-weight: bold;
+  border-bottom: 2px solid black;
+}
+
+/* Most Selling Products */
+.most-selling {
+  margin-top: 20px;
+}
+
+.product-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.product-card {
+  text-align: center;
+}
+
+.product-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  border: 2px solid blue;
+}
+
+/* Recent Purchase Section */
+.recent-purchase {
+  background-color: #f9f9e7;
+  padding: 15px;
+  border-radius: 15px;
+  margin-top: 20px;
+  border: 1px solid darkred;
+}
+
+.recent-purchase-title {
+  font-weight: bold;
+  text-align: center;
+}
+
+.purchase-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.purchase-info p,
+.profit-info p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.profit-icon {
+  width: 30px;
+  height: 30px;
 }
 
 /* Table */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background: #f9f9e7;
 }
 
 th, td {
-    border: 1px solid #f71b1b;
-    padding: 10px;
-    text-align: left;
+  border: 1px solid darkred;
+  padding: 10px;
+  text-align: left;
 }
 
 th {
-    background-color: #f2f2f2;
+  background: #f4f4f4;
+  font-weight: bold;
 }
-.search-box input {
-    padding: 5px;
-    border: 1px solid gray;
-  }
-
-.search-box button {
-    margin-left: 5px;
-    background-color: red;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-  }
-  .recent-purchase h2{
-    font-weight: bold;
-    size: 10px;
-    text-align: center;
-    color: #800000;
-  }
-
-  .recent-purchase {
-    background-color: #f2f2f2;
-    padding: 10px;
-    margin-top: 20px;
-    border-radius: 10px;
-  }
-  
-  .recent-purchase .red {
-    color: red;
-    font-weight: bold;
-  }
-  
-  .recent-purchase .green {
-    color: green;
-    font-weight: bold;
-  }

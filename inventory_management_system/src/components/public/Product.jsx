@@ -101,8 +101,8 @@ const Product = () => {
       {/* Sidebar */}
       <div className="sidebar">
         <h2>Hamro Inventory</h2>
-        <Link to="/" className="sidebar-btn">Home</Link>
-        <Link to="/Product" className="sidebar-btn active">Products</Link>
+            <Link to="/" className="sidebar-btn">🏠 Home</Link>
+            <Link to="/Product" className="sidebar-btn active">📦 Product</Link>
       </div>
 
       {/* Main Content */}
