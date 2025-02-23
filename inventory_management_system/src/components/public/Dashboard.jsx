@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import meat from "../../assets/meat.jpg";
 import veggies from "../../assets/veggies.jpg";
 import coke from "../../assets/coke.jpg";
@@ -8,11 +8,12 @@ import "./Dashboard.css";
 
 const Dashboard = () => {
   const navigate = useNavigate();
+  const location = useLocation(); // Get current path to highlight the active tab
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   // Product list for search suggestions
-  const products = ["Chicken", "Eggs", "Apple"];
+  const products = ["Chicken", "Eggs", "Apple","Tea","Milk"];
 
   // Handle search input change
   const handleSearchChange = (event) => {
@@ -79,8 +80,8 @@ const Dashboard = () => {
 
         {/* Navigation Tabs */}
         <nav className="dashboard-nav">
-          <Link to="/" className="nav-btn active">Dashboard</Link>
-          <Link to="/updates" className="nav-btn">Updates</Link>
+          <Link to="/" className={`nav-btn ${location.pathname === "/" ? "active" : ""}`}>Dashboard</Link>
+          <Link to="/update" className={`nav-btn ${location.pathname === "/update" ? "active" : ""}`}>Update</Link>
         </nav>
 
         {/* Most Selling Products */}

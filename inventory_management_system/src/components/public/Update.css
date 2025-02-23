@@ -1,0 +1,101 @@
+/* Full Screen Layout */
+.Container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 250px;
+    background-color: #800000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+  }
+  
+  .sidebar h2 {
+    margin-bottom: 20px;
+  }
+  
+  .sidebar-btn {
+    width: 80%;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  .sidebar-btn.active {
+    background-color: #d1cfcf;
+    color: black;
+  }
+  
+  /* Main Content */
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  /* Dashboard Header */
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+  }
+  
+  /* Navigation Tabs */
+  .dashboard-nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f5f5dc;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  .nav-btn {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    padding: 10px;
+  }
+  
+  .nav-btn.active {
+    font-weight: bold;
+    border-bottom: 2px solid black;
+  }
+  
+  /* Update Cards */
+  .updates-container {
+    margin-top: 20px;
+  }
+  
+  .update-card {
+    background-color: #f9f9e7;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid darkred;
+    margin-bottom: 15px;
+  }
+  
+  .update-title {
+    color: #800000;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  /* Updates Page Header */
+  .update-heading {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
