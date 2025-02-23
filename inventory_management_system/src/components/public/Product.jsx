@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Product.css";
 
-// Importing Images
 import chicken from "../../assets/chicken.png";
 import buff from "../../assets/buff.png";
 import turkey from "../../assets/turkey.png";
