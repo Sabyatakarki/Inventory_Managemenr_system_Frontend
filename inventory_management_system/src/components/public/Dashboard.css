@@ -177,6 +177,19 @@
   width: 30px;
   height: 30px;
 }
+.search-profile-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 
 /* Table */
 table {
