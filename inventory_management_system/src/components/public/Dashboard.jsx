@@ -1,21 +1,19 @@
 import React, { useState } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import meat from "../../assets/meat.jpg";
 import veggies from "../../assets/veggies.jpg";
 import coke from "../../assets/coke.jpg";
-import profitIcon from "../../assets/profit.png"; // Profit icon
+import profileIcon from "../../assets/profileIcon.png"; // Profile icon
+import profitIcon from "../../assets/profit.png"; 
 import "./Dashboard.css";
 
 const Dashboard = () => {
   const navigate = useNavigate();
-  const location = useLocation(); // Get current path to highlight the active tab
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
 
-  // Product list for search suggestions
-  const products = ["Chicken", "Eggs", "Apple","Tea","Milk"];
+  const products = ["Chicken", "Eggs", "Apple"];
 
-  // Handle search input change
   const handleSearchChange = (event) => {
     const value = event.target.value;
     setSearchTerm(value);
@@ -30,7 +28,6 @@ const Dashboard = () => {
     }
   };
 
-  // Handle suggestion click
   const handleSuggestionClick = (product) => {
     setSearchTerm(product);
     setFilteredProducts([]);
@@ -51,15 +48,24 @@ const Dashboard = () => {
         {/* Header */}
         <header className="dashboard-header">
           <h1>Welcome, To Hamro Inventory</h1>
-          <div className="search-section">
-            <input
-              type="text"
-              placeholder="Search product..."
-              className="search-input"
-              value={searchTerm}
-              onChange={handleSearchChange}
-            />
-            <button className="search-btn">🔍</button>
+
+          <div className="search-profile-section">
+            {/* Search Section */}
+            <div className="search-section">
+              <input
+                type="text"
+                placeholder="Search product..."
+                className="search-input"
+                value={searchTerm}
+                onChange={handleSearchChange}
+              />
+              <button className="search-btn">🔍</button>
+            </div>
+
+            {/* Profile Icon */}
+            <Link to="/profile">
+              <img src={profileIcon} alt="Profile" className="profile-icon" />
+            </Link>
           </div>
 
           {/* Search Suggestions Panel */}
@@ -80,8 +86,8 @@ const Dashboard = () => {
 
         {/* Navigation Tabs */}
         <nav className="dashboard-nav">
-          <Link to="/" className={`nav-btn ${location.pathname === "/" ? "active" : ""}`}>Dashboard</Link>
-          <Link to="/update" className={`nav-btn ${location.pathname === "/update" ? "active" : ""}`}>Update</Link>
+          <Link to="/" className="nav-btn active">Dashboard</Link>
+          <Link to="/updates" className="nav-btn">Updates</Link>
         </nav>
 
         {/* Most Selling Products */}

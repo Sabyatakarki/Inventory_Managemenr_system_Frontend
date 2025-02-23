@@ -7,6 +7,8 @@ import Free from "./components/public/Free";
 import Dashboard from './components/public/Dashboard';
 import Product from './components/public/Product';
 import Update from './components/public/Update';
+import Profile from './components/public/Profile';
+
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
         <Route path = "/Dashboard" element = {<Dashboard/>}/>
         <Route path = "/Product" element = {<Product/>}/>
         <Route path = "/Update" element = {<Update/>}/>
+        <Route path = "/Profile" element = {<Profile/>}/>
       </Routes>
     </Router>
   );
