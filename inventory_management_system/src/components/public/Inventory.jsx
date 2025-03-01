@@ -1,18 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios"; // Import axios
 import { Link, useNavigate } from "react-router-dom";
-import meat from "../../assets/meat.jpg";
-import veggies from "../../assets/veggies.jpg";
-import coke from "../../assets/coke.jpg";
 import profileIcon from "../../assets/profileIcon.png"; // Profile icon
 import profitIcon from "../../assets/profit.png"; 
-import "./Dashboard.css";
+import "./Inventory.css";
 
-const Dashboard = () => {
+const Inventory = () => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [products, setProducts] = useState([]); // To store products fetched from the backend
 
-  const products = ["Chicken", "Eggs", "Apple"];
+  // Fetch products from the backend when the component mounts
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get("http://localhost:4000/api/inventory"); // Replace with your API endpoint
+        setProducts(response.data.inventories); // Assuming the API returns a list of products under 'inventories'
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    fetchProducts();
+  }, []); // Empty dependency array ensures this runs only once when the component mounts
 
   const handleSearchChange = (event) => {
     const value = event.target.value;
@@ -20,7 +31,7 @@ const Dashboard = () => {
 
     if (value.length > 0) {
       const filtered = products.filter((product) =>
-        product.toLowerCase().includes(value.toLowerCase())
+        product.name.toLowerCase().includes(value.toLowerCase())
       );
       setFilteredProducts(filtered);
     } else {
@@ -29,7 +40,7 @@ const Dashboard = () => {
   };
 
   const handleSuggestionClick = (product) => {
-    setSearchTerm(product);
+    setSearchTerm(product.name); // Assuming product has 'name' property
     setFilteredProducts([]);
     navigate("/Product");
   };
@@ -39,7 +50,7 @@ const Dashboard = () => {
       {/* Sidebar */}
       <div className="sidebar">
         <h2>Hamro Inventory</h2>
-        <Link to="/Home" className="sidebar-btn active">🏠 Home</Link>
+        <Link to="/Inventory" className="sidebar-btn active">🏠 Home</Link>
         <Link to="/Product" className="sidebar-btn">📦 Product</Link>
       </div>
 
@@ -77,7 +88,7 @@ const Dashboard = () => {
                   className="search-suggestion"
                   onClick={() => handleSuggestionClick(product)}
                 >
-                  {product}
+                  {product.name}
                 </div>
               ))}
             </div>
@@ -87,25 +98,19 @@ const Dashboard = () => {
         {/* Navigation Tabs */}
         <nav className="dashboard-nav">
           <Link to="/" className="nav-btn active">Dashboard</Link>
-          <Link to="/updates" className="nav-btn">Updates</Link>
+          <Link to="/Update" className="nav-btn">Update</Link>
         </nav>
 
         {/* Most Selling Products */}
         <section className="most-selling">
           <h2>Most Selling Products</h2>
           <div className="product-list">
-            <div className="product-card">
-              <img src={meat} alt="Meat" />
-              <p>Meat</p>
-            </div>
-            <div className="product-card">
-              <img src={coke} alt="Soft Drinks" />
-              <p>Soft Drinks</p>
-            </div>
-            <div className="product-card">
-              <img src={veggies} alt="Veggies" />
-              <p>Veggies</p>
-            </div>
+            {products.map((product, index) => (
+              <div className="product-card" key={index}>
+                <img src={product.imageUrl} alt={product.name} /> {/* Use dynamic image URL */}
+                <p>{product.name}</p>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -118,61 +123,15 @@ const Dashboard = () => {
               <p><strong>Total Cost:</strong> <span className="red">$1000</span></p>
             </div>
 
-            <div className="product-info">
-              <p><strong>Chicken</strong> <span className="red">40 packs</span></p>
-              <p><strong>Apple</strong> <span>10 kl</span></p>
-            </div>
-
             <div className="profit-info">
               <p><strong>Profit :</strong> <span className="green">50+</span></p>
               <img src={profitIcon} alt="Profit Icon" className="profit-icon" />
             </div>
           </div>
         </section>
-
-        {/* Top Product List */}
-        <h3 className="section-title">Top Product List</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Brand Name</th>
-              <th>Order Item</th>
-              <th>Description</th>
-              <th>Cost</th>
-              <th>Supplier</th>
-              <th>Quantity Left</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Coca Cola</td>
-              <td>Coke</td>
-              <td>Fresh</td>
-              <td>200</td>
-              <td>IIILVO</td>
-              <td>450</td>
-            </tr>
-            <tr>
-              <td>Yasoda Foods</td>
-              <td>Current Noodles</td>
-              <td>Hot & Spicy</td>
-              <td>50</td>
-              <td>Yasoda Foods</td>
-              <td>608</td>
-            </tr>
-            <tr>
-              <td>Nango</td>
-              <td>Bread</td>
-              <td>Sugar Free</td>
-              <td>80</td>
-              <td>Nanglo</td>
-              <td>348</td>
-            </tr>
-          </tbody>
-        </table>
       </div>
     </div>
   );
 };
 
-export default Dashboard;
+export default Inventory;
