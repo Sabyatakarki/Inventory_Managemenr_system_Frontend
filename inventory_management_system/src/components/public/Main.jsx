@@ -10,8 +10,8 @@ const Main = () => {
   const handleLoginClick = () => {
     window.location.href = "/login";
   }
-    const handleSignupClick = () => {
-      window.location.href = "/Signup";
+    const handlerRegisterClick = () => {
+      window.location.href = "/Register";
   }
   const handleFreeClick=()=>{
     window.location.href ="/Free";
@@ -41,7 +41,7 @@ const Main = () => {
               management, order fulfillment, and inventory control system.A reliable inventory platform to help you grow you business.
             </p>
             <div className="buttons">
-              <button className="signup-btn" onClick={handleSignupClick}>SIGNUP NOW</button>
+              <button className="signup-btn" onClick={handlerRegisterClick}>SIGNUP NOW</button>
               <button className="explore-btn"onClick={handleFreeClick}>ONLY EXPLORE</button>
             </div>
           </div>

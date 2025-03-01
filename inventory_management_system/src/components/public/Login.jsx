@@ -21,7 +21,7 @@ const Login = () => {
       localStorage.setItem("userId", response.user.id);
       localStorage.setItem("userEmail", response.user.email);
         alert("Login successful!");
-        navigate("/dashboard"); // Redirect to Dashboard
+        navigate("/Inventory"); // Redirect to Dashboard
       }
     } catch (error) {
       setError("Invalid email or password. Try again."); // Display error message

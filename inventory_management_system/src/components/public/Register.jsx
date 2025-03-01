@@ -32,7 +32,7 @@ const Register = () => {
         navigate("/login"); // Redirect to Login page
       }
     } catch (error){
-      alert("SignUp failed. Please try again.");
+      alert("Registration failed. Please try again.");
     }
   };
 

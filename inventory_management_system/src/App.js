@@ -9,24 +9,22 @@ import Product from './components/public/Product';
 import Update from './components/public/Update';
 import Profile from './components/public/Profile';
 
-
 function App(){
   return (
     <Router>
       <Routes>
-       <Route path="/" element={<Inventory/>} /> 
+        <Route path="/" element={<Inventory/>}/> 
         <Route path="/login" element={<Login />}/>
-        <Route path="/Main" element={<Main />}/>
-        <Route path = "/Register" element = {<Register/>}/>
-        <Route path = "/Free" element = {<Free/>}/>
-        <Route path = "/Inventory" element = {<Inventory/>}/>
-        <Route path = "/Product" element = {<Product/>}/>
-        <Route path = "/Update" element = {<Update/>}/>
-        <Route path = "/Profile" element = {<Profile/>}/>
+        <Route path="/main" element={<Main />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/free" element={<Free />} />
+        <Route path="/inventory" element={<Inventory />} />
+        <Route path="/product" element={<Product />} />
+        <Route path="/update" element={<Update />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </Router>
   );
 }
+
 export default App;
-
-

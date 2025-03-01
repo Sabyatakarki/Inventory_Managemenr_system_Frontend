@@ -8,8 +8,8 @@ const Update = () => {
       {/* Sidebar */}
       <aside className="sidebar">
         <h2>Hamro Inventory</h2>
-        <Link to="/" className="sidebar-btn">Home</Link>
-        <Link to="/products" className="sidebar-btn">Products</Link>
+         <Link to="/Inventory" className="sidebar-btn">🏠 Home</Link>
+         <Link to="/Product" className="sidebar-btn">📦 Product</Link>
       </aside>
 
       {/* Main Content */}

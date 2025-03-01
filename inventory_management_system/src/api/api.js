@@ -13,24 +13,33 @@ const Api = axios.create({
 
 // Register User
 export const registerUser = async (userData) => {
-  try{
+  try {
     const response = await Api.post("/users/register", userData);
     return response.data;
-  }catch (error) {
+  } catch (error) {
     console.error("Error registering user:", error);
     throw error;
   }
 };
-  
-  // Login User
-  export const loginUser = async (credentials) => {
-    try {
-      const response = await Api.post("/users/login", credentials);
-      return response.data;
-    } catch (error) {
-      console.error("Error logging in:", error);
-      throw error;
-    }
-  };
 
-  
+// Login User
+export const loginUser = async (credentials) => {
+  try {
+    const response = await Api.post("/users/login", credentials);
+    return response.data;
+  } catch (error) {
+    console.error("Error logging in:", error);
+    throw error;
+  }
+};
+
+// Delete Product
+export const deleteProduct = async (productId) => {
+  try {
+    const response = await Api.delete(`/product/${productId}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error deleting product:", error);
+    throw error;
+  }
+};

@@ -1,29 +1,31 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios"; // Import axios
-import { Link, useNavigate } from "react-router-dom";
-import profileIcon from "../../assets/profileIcon.png"; // Profile icon
+import axios from "axios";
+import { Link } from "react-router-dom";
+import profileIcon from "../../assets/profileIcon.png"; 
 import profitIcon from "../../assets/profit.png"; 
-import "./Inventory.css";
+import "./Inventory.css"; // Ensure you have the CSS file
 
 const Inventory = () => {
-  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [products, setProducts] = useState([]); // To store products fetched from the backend
+  const [products, setProducts] = useState([]); // Most selling products
+  const [recentPurchase, setRecentPurchase] = useState([]); // Recent purchases
+  const [stock, setStock] = useState([]); // Stock details
 
-  // Fetch products from the backend when the component mounts
+  // Fetch data from backend API
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/inventory"); // Replace with your API endpoint
-        setProducts(response.data.inventories); // Assuming the API returns a list of products under 'inventories'
+        const response = await axios.get("http://localhost:5000/api/inventory"); // Replace with your API endpoint
+        setProducts(response.data.mostSelling);
+        setRecentPurchase(response.data.recentPurchases);
+        setStock(response.data.stock);
       } catch (error) {
-        console.error("Error fetching products:", error);
+        console.error("Error fetching inventory data:", error);
       }
     };
-
-    fetchProducts();
-  }, []); // Empty dependency array ensures this runs only once when the component mounts
+    fetchData();
+  }, []);
 
   const handleSearchChange = (event) => {
     const value = event.target.value;
@@ -39,25 +41,19 @@ const Inventory = () => {
     }
   };
 
-  const handleSuggestionClick = (product) => {
-    setSearchTerm(product.name); // Assuming product has 'name' property
-    setFilteredProducts([]);
-    navigate("/Product");
-  };
-
   return (
-    <div className="Container">
+    <div className="inventory-container">
       {/* Sidebar */}
       <div className="sidebar">
         <h2>Hamro Inventory</h2>
-        <Link to="/Inventory" className="sidebar-btn active">🏠 Home</Link>
+        <Link to="/Home" className="sidebar-btn active">🏠 Home</Link>
         <Link to="/Product" className="sidebar-btn">📦 Product</Link>
       </div>
 
       {/* Main Content */}
       <div className="main-content">
         {/* Header */}
-        <header className="dashboard-header">
+        <header className="inventory-header">
           <h1>Welcome, To Hamro Inventory</h1>
 
           <div className="search-profile-section">
@@ -79,25 +75,11 @@ const Inventory = () => {
             </Link>
           </div>
 
-          {/* Search Suggestions Panel */}
-          {filteredProducts.length > 0 && (
-            <div className="search-panel">
-              {filteredProducts.map((product, index) => (
-                <div
-                  key={index}
-                  className="search-suggestion"
-                  onClick={() => handleSuggestionClick(product)}
-                >
-                  {product.name}
-                </div>
-              ))}
-            </div>
-          )}
         </header>
 
         {/* Navigation Tabs */}
         <nav className="dashboard-nav">
-          <Link to="/" className="nav-btn active">Dashboard</Link>
+          <Link to="/" className="nav-btn active">Inventory</Link>
           <Link to="/Update" className="nav-btn">Update</Link>
         </nav>
 
@@ -107,7 +89,7 @@ const Inventory = () => {
           <div className="product-list">
             {products.map((product, index) => (
               <div className="product-card" key={index}>
-                <img src={product.imageUrl} alt={product.name} /> {/* Use dynamic image URL */}
+                <img src={product.imageUrl} alt={product.name} />
                 <p>{product.name}</p>
               </div>
             ))}
@@ -116,15 +98,21 @@ const Inventory = () => {
 
         {/* Recent Purchase Section */}
         <section className="recent-purchase">
-          <h2 className="recent-purchase-title">Recent purchase</h2>
+          <h2 className="recent-purchase-title">Recent Purchase</h2>
           <div className="purchase-card">
             <div className="purchase-info">
-              <p><strong>Quantity:</strong> <span className="red">3.00</span></p>
-              <p><strong>Total Cost:</strong> <span className="red">$1000</span></p>
+              <p><strong>Quantity:</strong> <span className="red">{recentPurchase.quantity}</span></p>
+              <p><strong>Total Cost:</strong> <span className="red">${recentPurchase.totalCost}</span></p>
+            </div>
+
+            <div className="product-info">
+              {recentPurchase.items && recentPurchase.items.map((item, index) => (
+                <p key={index}><strong>{item.name}</strong> <span className="red">{item.quantity}</span></p>
+              ))}
             </div>
 
             <div className="profit-info">
-              <p><strong>Profit :</strong> <span className="green">50+</span></p>
+              <p><strong>Profit :</strong> <span className="green">{recentPurchase.profit}+</span></p>
               <img src={profitIcon} alt="Profit Icon" className="profit-icon" />
             </div>
           </div>
