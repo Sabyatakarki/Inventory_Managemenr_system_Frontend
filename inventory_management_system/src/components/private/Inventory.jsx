@@ -12,7 +12,7 @@ const Inventory = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/inventory"); // Replace with your API endpoint
+        const response = await axios.get("http://localhost:4000/api/inventory"); // Replace with your API endpoint
         setProducts(response.data.mostSelling);
         setStock(response.data.stock);
       } catch (error) {
@@ -27,6 +27,7 @@ const Inventory = () => {
       {/* Sidebar */}
       <div className="sidebar">
         <h2>Hamro Inventory</h2>
+        <h1>Make your Business thrive</h1>
         <Link to="/Home" className="sidebar-btn active">🏠 Home</Link>
         <Link to="/Product" className="sidebar-btn">📦 Product</Link>
       </div>

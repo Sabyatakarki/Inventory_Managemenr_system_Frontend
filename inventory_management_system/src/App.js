@@ -9,8 +9,9 @@ import Product from './components/public/Product';
 import Update from './components/public/Update';
 import Profile from './components/public/Profile';
 
+
 function App(){
-  return (
+  return(
     <Router>
       <Routes>
         <Route path="/" element={<Inventory/>}/> 

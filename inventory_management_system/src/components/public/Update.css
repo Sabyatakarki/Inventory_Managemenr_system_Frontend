@@ -43,6 +43,10 @@
     padding: 20px;
     overflow-y: auto;
   }
+
+  .search-profile-section{
+    margin-top: 20px;
+  }
   
   /* Dashboard Header */
   .dashboard-header {
